@@ -1,0 +1,26 @@
+{
+  "name": "electron-astro-template",
+  "type": "module",
+  "version": "0.0.1",
+  "private": true,
+  "main": "src/main.jsx",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "electron:serve": "concurrently -k \"cross-env BROWSER=none yarn start\" \"yarn electron:start\"",
+    "electron:build": "",
+    "electron:start": "wait-on tcp:3000 && electron ."
+  },
+  "dependencies": {
+    "astro": "^1.8.0",
+    "concurrently": "^7.6.0",
+    "cross-env": "^7.0.3",
+    "wait-on": "^7.0.1"
+  },
+  "devDependencies": {
+    "electron": "^22.0.0"
+  }
+}
